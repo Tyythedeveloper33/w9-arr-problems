@@ -62,16 +62,18 @@ const secondLargest = arr => {
   return sorted[arr.length - 2]
 };
 
-
+//Time complexity 0(n); Space complexity 0(n)
 const shuffle = (arr) => {
+  let k = Math.floor(Math.random() * (arr.length))
   let newArr = [...arr]
-  for(let i = newArr.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1))
-    console.log(j)
-    [newArr[i], newArr[j]] = [newArr[j], newArr[i]]
+  for(let i = 0; i < newArr.length; i++) {
+    [newArr[i], newArr[k]] = [newArr[k], newArr[i]]
   }
   return newArr
 };
-console.log(shuffle([1, 2, 3, 4]))
+
+
+
+
 
 module.exports = [findMinimum, runningSum, evenNumOfChars, smallerThanCurr, twoSum, secondLargest, shuffle];
